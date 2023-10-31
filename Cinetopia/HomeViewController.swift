@@ -15,11 +15,15 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .background
         
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Hello, World!"
         label.textColor = .white
         label.font = .systemFont(ofSize: 24.0, weight: .bold)
         
         view.addSubview(label)
+        
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
     }
 
