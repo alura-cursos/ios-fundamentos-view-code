@@ -22,8 +22,10 @@ class HomeViewController: UIViewController {
         
         view.addSubview(label)
         
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            label.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
         
     }
 
