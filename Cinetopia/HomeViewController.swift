@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
         button.backgroundColor = UIColor.buttonBackground
         button.layer.cornerRadius = 32
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -49,6 +50,10 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .background
         addSubviews()
         setupConstraints()
+    }
+    
+    @objc private func buttonPressed() {
+        print("Botão pressionado")
     }
     
     private func addSubviews() {
