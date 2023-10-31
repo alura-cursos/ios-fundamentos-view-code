@@ -32,6 +32,17 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    private lazy var welcomeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Quero começar!", for: .normal)
+        button.setTitleColor(.background, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
+        button.backgroundColor = UIColor.buttonBackground
+        button.layer.cornerRadius = 32
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,6 +55,7 @@ class HomeViewController: UIViewController {
         view.addSubview(logoImageView)
         view.addSubview(coupleImageView)
         view.addSubview(welcomeLabel)
+        view.addSubview(welcomeButton)
     }
     
     private func setupConstraints() {
@@ -56,7 +68,12 @@ class HomeViewController: UIViewController {
             
             welcomeLabel.topAnchor.constraint(equalTo: coupleImageView.bottomAnchor, constant: 32),
             welcomeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            welcomeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            welcomeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            welcomeButton.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 64),
+            welcomeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 64),
+            welcomeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -64),
+            welcomeButton.heightAnchor.constraint(equalToConstant: 64)
         ])
     }
     
