@@ -1,4 +1,4 @@
-![Thumbnail GitHub](https://github.com/giovannamoeller/ios-fundamentos-view-code/assets/47362960/2315db91-aa7a-4b3a-970b-8ad34decd49e)
+![Thumbnail GitHub](https://github.com/giovannamoeller/ios-fundamentos-view-code/assets/47362960/285cd843-1c02-46a9-b4de-d26d43f452c7)
 
 # Cinetopia
 
