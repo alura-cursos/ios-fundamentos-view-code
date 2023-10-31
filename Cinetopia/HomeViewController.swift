@@ -15,6 +15,11 @@ class HomeViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var coupleImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage.couple)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +31,16 @@ class HomeViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(logoImageView)
+        view.addSubview(coupleImageView)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 64),
             logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            
+            coupleImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 32),
+            coupleImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
     
