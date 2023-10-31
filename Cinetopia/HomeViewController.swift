@@ -21,6 +21,17 @@ class HomeViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var welcomeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "O lugar ideal para buscar, salvar e organizar seus filmes favoritos!"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textColor = .white
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +43,7 @@ class HomeViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(logoImageView)
         view.addSubview(coupleImageView)
+        view.addSubview(welcomeLabel)
     }
     
     private func setupConstraints() {
@@ -41,6 +53,10 @@ class HomeViewController: UIViewController {
             
             coupleImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 32),
             coupleImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            welcomeLabel.topAnchor.constraint(equalTo: coupleImageView.bottomAnchor, constant: 32),
+            welcomeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            welcomeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
     
