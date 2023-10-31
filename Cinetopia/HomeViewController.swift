@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
         button.backgroundColor = UIColor.buttonBackground
         button.layer.cornerRadius = 32
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -51,6 +52,10 @@ class HomeViewController: UIViewController {
         setupConstraints()
     }
     
+    @objc private func buttonPressed() {
+        navigationController?.pushViewController(MoviesViewController(), animated: true)
+    }
+    
     private func addSubviews() {
         view.addSubview(logoImageView)
         view.addSubview(coupleImageView)
@@ -60,7 +65,7 @@ class HomeViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 64),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
             logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             
             coupleImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 32),
